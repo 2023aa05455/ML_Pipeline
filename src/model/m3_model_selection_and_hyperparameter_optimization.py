@@ -9,12 +9,13 @@ from tensorflow.keras.datasets import fashion_mnist
 from tpot import TPOTClassifier
 import logging
 
-# Configure logging
-logging.basicConfig(filename="automl_results.log", level=logging.INFO, format='%(asctime)s - %(message)s')
-
 # Create reports directory
-# os.makedirs("model_hyperparameter_reports", exist_ok=True)
 model_hyper_param_reports_dir = "../../model_selection_hyperparameter_reports"
+os.makedirs("model_hyper_param_reports_dir", exist_ok=True)
+
+# Configure logging
+logging.basicConfig(filename="model_hyper_param_reports_dir\\automl_results.log", level=logging.INFO, format='%(asctime)s - %(message)s')
+
 
 def log_results(message):
     """Log messages to both console and file."""
