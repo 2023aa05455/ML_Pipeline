@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Bits Pilani/Third Sem/MLOps/src/model/../../mlruns/478626562517610170/e4c110f01729424e9a587da4cdceaf8f/artifacts
+end_time: 1742402608058
+entry_point_name: ''
+experiment_id: '478626562517610170'
+lifecycle_stage: active
+run_id: e4c110f01729424e9a587da4cdceaf8f
+run_name: CNN
+run_uuid: e4c110f01729424e9a587da4cdceaf8f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742402505003
+status: 3
+tags: []
+user_id: ychavhan

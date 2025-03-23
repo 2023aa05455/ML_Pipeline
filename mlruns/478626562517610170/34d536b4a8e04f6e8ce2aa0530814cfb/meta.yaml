@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Bits Pilani/Third Sem/MLOps/src/model/../../mlruns/478626562517610170/34d536b4a8e04f6e8ce2aa0530814cfb/artifacts
+deleted_time: 1742541774316
+end_time: 1742485185251
+entry_point_name: ''
+experiment_id: '478626562517610170'
+lifecycle_stage: deleted
+run_id: 34d536b4a8e04f6e8ce2aa0530814cfb
+run_name: SVC
+run_uuid: 34d536b4a8e04f6e8ce2aa0530814cfb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742484788262
+status: 3
+tags: []
+user_id: ychavhan

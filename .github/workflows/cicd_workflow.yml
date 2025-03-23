@@ -1,0 +1,81 @@
+# .github/workflows/ci-cd-pipeline.yml
+name: CI/CD Pipeline for MLOPS Assignment Group 57
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  linting:
+    name: Linting
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+
+      - name: Run Linter
+        run: |
+          flake8 . --count --max-line-length=88 --statistics
+
+  testing:
+    name: Testing
+    runs-on: ubuntu-24.04
+    needs: linting
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Tests
+        run: |
+          pytest  tests/test_cancer_detection_model.py
+
+  deployment:
+    name: Deployment
+    runs-on: ubuntu-24.04
+    needs: testing
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Deploy Model
+        run: |
+          python src/model/cancer_detection_LR.py
+          echo "Model deployed successfully!"

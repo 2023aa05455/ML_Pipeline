@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Bits Pilani/Third Sem/MLOps/src/model/../../mlruns/478626562517610170/8e9b7365455b474893928abe0a9d22e9/artifacts
+deleted_time: 1742541774316
+end_time: 1742400838169
+entry_point_name: ''
+experiment_id: '478626562517610170'
+lifecycle_stage: deleted
+run_id: 8e9b7365455b474893928abe0a9d22e9
+run_name: Sequential
+run_uuid: 8e9b7365455b474893928abe0a9d22e9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742400747152
+status: 3
+tags: []
+user_id: ychavhan

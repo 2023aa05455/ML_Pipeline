@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Bits Pilani/Third Sem/MLOps/src/model/../../mlruns/478626562517610170/3c48c25e5b9e4b249d92c6f1010eb94b/artifacts
+end_time: 1742644028548
+entry_point_name: ''
+experiment_id: '478626562517610170'
+lifecycle_stage: active
+run_id: 3c48c25e5b9e4b249d92c6f1010eb94b
+run_name: RandomForestClassifier
+run_uuid: 3c48c25e5b9e4b249d92c6f1010eb94b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742643929610
+status: 3
+tags: []
+user_id: ychavhan

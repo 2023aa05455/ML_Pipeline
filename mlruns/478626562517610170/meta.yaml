@@ -1,0 +1,6 @@
+artifact_location: file:///C:/Bits Pilani/Third Sem/MLOps/src/model/../../mlruns/478626562517610170
+creation_time: 1742398572332
+experiment_id: '478626562517610170'
+last_update_time: 1742398572332
+lifecycle_stage: active
+name: Fashion_MNIST_Model

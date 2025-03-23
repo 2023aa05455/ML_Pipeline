@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Bits Pilani/Third Sem/MLOps/src/model/../../mlruns/478626562517610170/2d3887a5589c493ba485f4a111dd4d09/artifacts
+deleted_time: 1742541774300
+end_time: 1742488081521
+entry_point_name: ''
+experiment_id: '478626562517610170'
+lifecycle_stage: deleted
+run_id: 2d3887a5589c493ba485f4a111dd4d09
+run_name: RandomForestClassifier
+run_uuid: 2d3887a5589c493ba485f4a111dd4d09
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742487990743
+status: 3
+tags: []
+user_id: ychavhan

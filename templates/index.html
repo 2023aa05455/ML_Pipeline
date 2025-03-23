@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification using MNIST</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #1e3d58;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 1.1em;
+            color: #1e3d58;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        h2 {
+            color: #ff7043;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1e3d58;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Image Classification</h1>
+
+        <form id="prediction-form" enctype="multipart/form-data">
+            <label for="file">Upload an image:</label><br><br>
+            <input type="file" id="file" name="file" accept="image/*" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2>Identified digit is:<span id="prediction-result"></span></h2>
+    </div>
+
+    <div class="footer">
+        <p>&copy; Image Classification app</p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#prediction-form").on("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                var formData = new FormData(this);
+
+                // Send the file to the backend API
+                $.ajax({
+                    url: "/predict",  // The endpoint to handle image classification
+                    method: "POST",
+                    data: formData,
+                    contentType: false, // Don't set content type, jQuery will handle it
+                    processData: false, // Don't process data, let FormData handle it
+                    success: function (response) {
+                        console.log("Response received:", response);  // Log the response
+                        $("#prediction-result").text(response.prediction); // Update prediction result
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);  // Log the error message
+                        alert("Error: " + error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
